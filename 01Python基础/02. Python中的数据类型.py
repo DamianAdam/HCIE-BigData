@@ -110,3 +110,26 @@ print("我是%s，今年%03d岁，性别：%s，月薪为%+011.2f" % (name, age,
 print("我是{0}，今年{1:03d}岁，性别：{2}，月薪为{3:+011.2f}".format(name, age, gender, salary))
 
 """ 知识点三：列表 """
+list1 = [1, 2.43, True, "ABCD"]
+print(list1)  # [1, 2.43, True, 'ABCD']
+
+list2 = [x for x in range(1, 10)]
+print(list2)  # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+l1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(l1[3])  # 3
+print(l1[1:9:2])  # [1, 3, 5, 7]
+
+l2 = [0, 6, 1, 3, 5, 7, 1]
+print(l2.index(1))  # 2
+
+lst1 = [5, 1, 7, 3, "Hello"]
+lst1.append("World")
+print(lst1)  # [5, 1, 7, 3, 'Hello', 'World']
+
+lst1.insert(3, 100)
+print(lst1)  # [5, 1, 7, 100, 3, 'Hello', 'World']
+
+new_list = [1, 2, 3]
+lst1.extend(new_list)
+print(lst1)  # [5, 1, 7, 100, 3, 'Hello', 'World', 1, 2, 3]
