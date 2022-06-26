@@ -93,3 +93,20 @@ str = "Hello Python"
 print(str[:2])  # He
 print(str[3:])  # lo Python
 print(str[3: 10: 3])  # lPh
+
+str = "Hello Python Hello Linux"
+print(str.replace("Hello", "Hi"))  # Hi Python Hi Linux
+print(str.replace("Hello", "Hi", 1))  # Hi Python Hello Linux
+
+str = "PyThoN"
+print(str.upper())  # PYTHON
+print(str.lower())  # python
+
+name = "Adam"
+age = 18
+gender = "male"
+salary = 150000
+print("我是%s，今年%03d岁，性别：%s，月薪为%+011.2f" % (name, age, gender, salary))
+print("我是{0}，今年{1:03d}岁，性别：{2}，月薪为{3:+011.2f}".format(name, age, gender, salary))
+
+""" 知识点三：列表 """
