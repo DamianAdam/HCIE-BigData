@@ -36,4 +36,27 @@ num2 = 324.1324
 result = num1 + num2
 print(type(num2), num2)  # <class 'float'> 324.1324
 
+float_number1 = 3.745
+int_number1 = int(float_number1)
+print(int_number1)  # 3
+
+print(round(3.72, 2))  # 3.72
+print(round(3.7276, 2))  # 3.73
+
+number_str = '%.2f' % 3.1415926
+number_float = float(number_str)
+print(type(number_float), number_float)  # <class 'float'> 3.14
+
+print(10 / 3)  # 3.3333333333333335
+print('%.30f' % (10 / 3))  # 3.333333333333333481363069950021
+
+from decimal import Decimal, getcontext
+
+result1 = Decimal(1) / Decimal(3)
+print(result1)  # 0.3333333333333333333333333333
+
+getcontext().prec = 10  # 使用getcontext的prec空值精度
+result2 = Decimal(1) / Decimal(3)
+print(result2)  # 0.3333333333
+
 """ 知识点二：字符串类型 """
