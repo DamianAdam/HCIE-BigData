@@ -46,8 +46,10 @@ print(type(a), a)
 a = "Food"
 print(type(a), a)
 
-a, b, c = 1, 2, 3
+a = b = c = 3
+a, b = 1, 2
 a, b = b, a
+print(a, b, c)
 
 """ 知识点六：关键字 """
 import keyword
