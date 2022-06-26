@@ -60,3 +60,36 @@ result2 = Decimal(1) / Decimal(3)
 print(result2)  # 0.3333333333
 
 """ 知识点二：字符串类型 """
+str1 = "abc"
+print(type(str1), str1, len(str1))  # <class 'str'> abc 3
+str2 = 'a'
+print(type(str2), str2, len(str2))  # <class 'str'> a 1
+
+str3 = "Hello \n World"
+print(str3)
+
+str4 = r"Hello \n World"
+print(str4)
+
+list1 = "Hello Linux Hello Python".split(" ")
+print(list1)  # ['Hello', 'Linux', 'Hello', 'Python']
+
+get_str = "--".join(list1)
+print(get_str)  # Hello--Linux--Hello--Python
+
+string1 = "abc"
+string2 = "def"
+new_str = string1 + string2
+print(new_str)  # abcdef
+
+duplicate_string = "abc" * 3
+print(duplicate_string)  # abcabcabc
+
+str = "Hello"
+print(str[1])  # e
+print(str[-1])  # o
+
+str = "Hello Python"
+print(str[:2])  # He
+print(str[3:])  # lo Python
+print(str[3: 10: 3])  # lPh
