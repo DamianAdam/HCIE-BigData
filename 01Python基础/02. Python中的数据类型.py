@@ -133,3 +133,53 @@ print(lst1)  # [5, 1, 7, 100, 3, 'Hello', 'World']
 new_list = [1, 2, 3]
 lst1.extend(new_list)
 print(lst1)  # [5, 1, 7, 100, 3, 'Hello', 'World', 1, 2, 3]
+
+lst1 = [1, 2, 3, 4, 5]
+lst2 = [6, 7, 8, 9, 10]
+new_lst = lst1 + lst2
+print(new_lst)  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print([1, 2, 3] * 4)  # [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]
+
+list1 = [13, 514, 112, 133, 514, 343, 514, 545]
+list1.pop(2)
+print(list1)  # [13, 514, 133, 514, 343, 514, 545]
+list1.pop()
+print(list1)  # [13, 514, 133, 514, 343, 514]
+
+list1.remove(514)
+print(list1)  # [13, 133, 514, 343, 514]
+list1.remove(514)
+print(list1)  # [13, 133, 343, 514]
+
+del list1[3]
+print(list1)  # [13, 133, 343]
+
+lst1 = [5, 1, 7, 3, 2, 6]
+lst1.sort()
+print(lst1)  # [1, 2, 3, 5, 6, 7]
+
+lst2 = [3, 7, 1, 4, 5, 8]
+lst2.sort(reverse=True)
+print(lst2)  # [8, 7, 5, 4, 3, 1]
+
+lst3 = [213, 643, True, "ABC", 132]
+lst3.reverse()
+print(lst3)  # [132, 'ABC', True, 643, 213]
+
+# 取前三名的成绩
+# 方式一：
+records = [89, 78, 98, 56, 91, 75]
+print(sorted(records, reverse=True)[:3])  # [98, 91, 89]
+
+# 方式二：
+records = [89, 78, 98, 56, 91, 75]
+# 必须分开写
+records.sort(reverse=True)
+print(records[0:3])  # [98, 91, 89]
+
+lst = [132, 'ABC', True, 643, 213]
+print(len(lst))  # 5
+
+lst = [5, 5, 1, 3, 2, 5]
+print(lst.count(5))  # 3
