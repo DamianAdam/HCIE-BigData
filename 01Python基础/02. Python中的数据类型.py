@@ -183,3 +183,99 @@ print(len(lst))  # 5
 
 lst = [5, 5, 1, 3, 2, 5]
 print(lst.count(5))  # 3
+
+""" 知识点四：元组类型 """
+tup1 = (1, 2, 3, 4, 5)
+print(tup1, type(tup1))  # (1, 2, 3, 4, 5) <class 'tuple'>
+
+tup2 = 1, 2, 3, 4, 5
+print(tup2, type(tup2))  # (1, 2, 3, 4, 5) <class 'tuple'>
+
+t1 = (1,)
+print(t1, type(t1))  # (1,) <class 'tuple'>
+
+t2 = (1)
+print(t2, type(t2))  # 1 <class 'int'>
+
+t3 = 1,
+print(t3, type(t3))  # (1,) <class 'tuple'>
+
+# TypeError: 'tuple' object does not support item assignment
+# a = (1, 2, 3)
+# a[1] = 3
+
+a = (1, [1, 0])
+print(a)  # (1, [1, 0])
+
+a[1][1] = 1
+print(a)  # (1, [1, 1])
+
+print(a[0])  # 1
+print(a[1])  # [1, 1]
+
+t1 = (1, 2, 3)
+t2 = (4, 5, 6)
+print(t1 + t2)  # (1, 2, 3, 4, 5, 6)
+print(t2 * 3)  # (4, 5, 6, 4, 5, 6, 4, 5, 6)
+
+""" 知识点五：字典类型 """
+# 方式一：直接使用花括号包裹。
+dic1 = {"k1": "v1", "k2": "v2", "k1": "v3"}
+print(dic1)  # {'k1': 'v3', 'k2': 'v2'}
+
+# 方式二：使用dict()函数，参数为一个包含n个(k, v)的二元组的列表或元组。
+dic2 = dict([("k1", "v1"), ("k2", "v2"), ("k3", "v3")])  # 参数为列表。
+print(dic2)  # {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
+dic3 = dict((("k1", "v1"), ("k2", "v2"), ("k3", "v3")))  # 参数为元组。
+print(dic3)  # {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
+
+# 方式三：使用dict()函数的可变形参
+dic4 = dict(k1="v1", k2="v2", k3="v3")
+print(dic4)  # {'k1': 'v1', 'k2': 'v2', 'k3': 'v3'}
+
+dic = {}  # 空字典
+dic["k1"] = "value1"
+dic["k2"] = "value1"
+print(dic)  # {'k1': 'value1', 'k2': 'value1'}
+dic["k1"] = "new Value1"
+print(dic)  # {'k1': 'new Value1', 'k2': 'value1'}
+
+dic = {"k1": "v1", "k2": "v2", "k3": "v3", "k4": "v4", "k5": "v5"}
+delete = dic.pop("k3")
+print(dic, delete)  # {'k1': 'v1', 'k2': 'v2', 'k4': 'v4', 'k5': 'v5'} v3
+
+delete = dic.popitem()
+print(dic, delete)  # {'k1': 'v1', 'k2': 'v2', 'k4': 'v4'} ('k5', 'v5')
+
+dic.clear()
+print(dic)  # {}
+
+deldic = {"k1": "v1", "k2": "v2"}
+del deldic
+# print(deldic)  # NameError: name 'deldic' is not defined
+
+dic = {"k1": "v1", "k2": "v2", "k3": "v3"}
+print(dic["k1"], dic["k3"])  # v1 v3
+# KeyError: 'abcd'
+# print(dic["abcd"])
+
+print(dic.get("k1", "Null"))  # v1
+print(dic.get("abcd", "Null"))  # Null
+
+print(dic.items())  # dict_items([('k1', 'v1'), ('k2', 'v2'), ('k3', 'v3')])
+print(dic.keys())  # dict_keys(['k1', 'k2', 'k3'])
+print(dic.values())  # dict_values(['v1', 'v2', 'v3'])
+
+dic1 = {"k1": "v1", "k2": "v2"}
+dic2 = {"k2": "value2", "k3": "v3"}
+dic1.update(dic2)
+print(dic1)  # {'k1': 'v1', 'k2': 'value2', 'k3': 'v3'}
+
+""" 知识点六：集合类型 """
+set1 = {1, 1, 2, 3, 3, 5, 1}
+print(set1) # {1, 2, 3, 5}，重复元素被删除了
+
+set2 = {}
+print(type(set2), set2)  # <class 'dict'> {}
+set2 = set()
+print(type(set2), set2)  # <class 'set'> set()
