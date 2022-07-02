@@ -279,3 +279,116 @@ set2 = {}
 print(type(set2), set2)  # <class 'dict'> {}
 set2 = set()
 print(type(set2), set2)  # <class 'set'> set()
+
+s1 = {1, 2, 3}
+s1.add(5)
+s1.add("abc")
+s1.add(5)
+print(s1)  # {1, 2, 3, 5, 'abc'}，已有的元素不会被添加
+
+s1 = {1, 2, 3}
+s2 = [4, 61, "aa"]
+s3 = {"k1":"v1", "k2":"v2"}
+
+# 方式一：
+# s1.update(s2)
+# print(s1)  # {1, 2, 3, 4, 'aa', 61}
+# s1.update(s3)
+# print(s1)  # {1, 2, 3, 4, 'k1', 'aa', 61, 'k2'}
+
+# 方式二：
+s1.update(s2, s3)
+print(s1)  # {1, 2, 3, 4, 'k2', 'k1', 'aa', 61}
+
+s1 = {1, 2, 3, 4}
+s1.remove(3)
+print(s1)  # {1, 2, 4}
+# s1.remove(3000)  # 报错KeyError: 3000
+
+s1 = {1, 2, 3, 4}
+s1.discard(3)
+print(s1)  # {1, 2, 4}
+s1.discard(3000)  # 不做任何处理
+
+s = {1, 2, 3, 4}
+s.clear()
+print(s)  # set()
+
+s = {1, 2, 3, 4}
+s.pop()
+print(s)  # {2, 3, 4}
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+s3 = s1 & s2
+print(s3)  # {3, 4}
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+s3 = s1 | s2
+print(s3)  # {1, 2, 3, 4, 5, 6}
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+s3 = s1 - s2
+print(s3)  # {1, 2}
+
+s1 = {1, 2, 3, 4}
+s2 = {3, 4, 5, 6}
+s3 = s1 ^ s2
+print(s3)  # {1, 2, 5, 6}
+
+""" 知识点七：数据类型公共方法 """
+lst = [1, 42, 54, "Abc", True]
+print(len(lst))  # 5
+
+flag = False
+print(type(flag))  # <class 'bool'>
+
+lst = [5, 1, 7, 3]
+for index, tmp in enumerate(lst):
+    print(index, tmp)
+
+str = "abc"
+print(id(str))  # 2432064349616
+
+lst = [12, 321, False, "Apple", "Mac"]
+print("Apple" in lst)  # True
+
+lst = [5, 1, 7, 3]
+max_num = max(lst)
+min_num = min(lst)
+print(min_num, max_num)  # 1 7
+
+obj = "ABC"
+print(obj)  # ABC
+del obj
+# print(obj)  # 报错，NameError: name 'obj' is not defined
+
+num = 123
+str_num = str(num)
+print(type(str_num), str_num)  # <class 'str'> 123
+
+tup = (1, 2, 3, 4)
+lst = list(tup)
+print(type(lst), lst)  # <class 'list'> [1, 2, 3, 4]
+
+lst = [1, 2, 3, 4]
+tup = tuple(lst)
+print(type(tup), tup)  # <class 'tuple'> (1, 2, 3, 4)
+
+lst = [1, 2, 3, 1, 2, 4]
+s = set(lst)
+print(type(s), s)  # <class 'set'> {1, 2, 3, 4}
+
+x_loc = ('x', 5.1)
+y_loc = ('y', 31.6)
+z_loc = ('z', -19.7)
+loc = dict([x_loc, y_loc, z_loc])
+print(type(loc), loc)  # <class 'dict'> {'x': 5.1, 'y': 31.6, 'z': -19.7}
+
+pi = 3.14
+i = int(pi)
+print(i)  # 3
+f = float(i)
+print(f)  # 3.0
