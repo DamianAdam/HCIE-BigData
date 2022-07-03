@@ -36,5 +36,21 @@ def fun(a, b, c=100, *args, **kwargs):
 
 fun(1, 2, 3, 4, 5, 6, 7, k1="v1", k2="v2")
 
+
 def func(a, b, c=100, d=200, *args, **kwargs):
     pass
+
+
+# 函数声明
+def add(num1, num2):
+    return num1 + num2
+
+
+# 函数调用
+print(add(10, 20))
+
+# 函数声明
+lambda_add = lambda num1, num2: num1 + num2
+
+# 函数调用
+print(lambda_add(10, 20))

@@ -130,4 +130,31 @@ print(feibo2(5))  # [1, 1, 2, 3, 5]
 lst1 = ['col1', 'col2', 'col3', 'col4', 'col5']
 lst2 = [5, 1, 7, 3, 6]
 lst3 = list(zip(lst1, lst2))
-print(lst3)
+lst3.sort(key=lambda data: data[1], reverse=True)
+print(lst3[:3])  # [('col3', 7), ('col5', 6), ('col1', 5)]
+
+def func0(lst, reverse=True):
+    for i in range(len(lst) - 1):
+        for j in range(0, len(lst) - 1 - i):
+            if reverse:
+                if lst[j] > lst[j + 1]:
+                    lst[j], lst[j + 1] = lst[j + 1], lst[j]
+            else:
+                if lst[j] < lst[j + 1]:
+                    lst[j], lst[j + 1] = lst[j + 1], lst[j]
+
+lst = [5, 1, 3, 6, 2]
+func0(lst, False)
+print(lst)  # [6, 5, 3, 2, 1]
+func0(lst)
+print(lst)  # [1, 2, 3, 5, 6]
+
+def func(lst):
+    dic = {}
+    set_data = set(lst)
+    for i in set_data:
+        dic[i] = lst.count(i)
+    return dic
+
+lst = [2, 2, 1, 3, 2, 1, 3, 4, 1, 2, 4]
+print(func(lst))

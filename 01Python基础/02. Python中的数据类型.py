@@ -365,6 +365,29 @@ print(obj)  # ABC
 del obj
 # print(obj)  # 报错，NameError: name 'obj' is not defined
 
+lst1 = [1, 3, 4, 6]
+lst2 = ['A', 'C', 'D', 'F']
+lst3 = list(zip(lst1, lst2))
+print(lst3)  # [(1, 'A'), (3, 'C'), (4, 'D'), (6, 'F')]
+
+lst1 = [1, 3, 4, 6]
+lst2 = ['A', 'C', 'D', 'F', 'G', 'H', 'Z']
+lst3 = list(zip(lst1, lst2))
+print(lst3)  # [(1, 'A'), (3, 'C'), (4, 'D'), (6, 'F')]
+
+lst1 = [1, 3, 4, 6]
+lst2 = ['A', 'C', 'D', 'F']
+my_zip = zip(lst1, lst2)
+l1, l2 = zip(*my_zip)
+print(list(l1))  # [1, 3, 4, 6]
+print(list(l2))  # ['A', 'C', 'D', 'F']
+
+print(isinstance(3.14, int))  # False
+print(isinstance(5, int))  # True
+
+lst = [1, 1, 4, 5, 1, 3, 2, 1, 6, 1]
+print(lst.count(1))  # 5
+
 num = 123
 str_num = str(num)
 print(type(str_num), str_num)  # <class 'str'> 123
